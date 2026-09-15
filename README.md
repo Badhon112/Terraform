@@ -39,7 +39,7 @@ resource aws_instance
   - This command download the provider specified in configuration
 - _Terraform plan_
   - Shows what all changes that are going to create/modify/delete
-- _Terraform apply_
+- _Terraform apply --auto-approve_
   - Apply planned changes post approval (Yes/No)
 - _Terraform destroy_
   - Destroy all changes post approval (Yes/No)
