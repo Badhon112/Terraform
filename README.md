@@ -43,3 +43,9 @@ resource aws_instance
   - Apply planned changes post approval (Yes/No)
 - _Terraform destroy_
   - Destroy all changes post approval (Yes/No)
+
+---
+
+```bash
+$ Remove-Item -Recurse -Force .terraform*
+```
