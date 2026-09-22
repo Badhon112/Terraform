@@ -5,12 +5,6 @@ terraform {
       version = "~> 6.0"
     }
   }
-  # backend "s3" {
-  #   key = "value"
-  #   region = "value"
-  #   bucket = "value"
-  #   dynamodb_table = "value"
-  # }
 }
 
 provider "aws" {
