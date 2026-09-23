@@ -1,18 +1,23 @@
-# Creating an Ec2 Instance
+# Creation Of the VPC script
 
-resource "aws_instance" "EC2" {
-  ami               = var.ami
-  instance_type     = var.instance_type
-  availability_zone = var.availability_zone
+resource "aws_vpc" "vpc" {
+  cidr_block       = var.vpc_cidr_block
+  instance_tenancy = "default"
+
   tags = {
-    Name = var.instance_name
+    Name = "main"
   }
 }
 
 
-# Creating and Elastic IP for EC2
 
-resource "aws_eip" "Ec2_Eip" {
-  domain   = "vpc"
-  instance = aws_instance.EC2.id
+# Creation of Public Subnet
+
+resource "aws_subnet" "public_subnet" {
+  vpc_id     = aws_vpc.vpc.id
+  cidr_block = var.public_subnet
+
+  tags = {
+    Name = var.public_subnet_name
+  }
 }
